@@ -7,13 +7,13 @@
 """
 import random
 class FlipCoin :
-    def __init__(self):
+    def __init__(self):                                     # constructor
         self.FlipCoinNumber = 0
         self.HeadTail = 0
         self.Head = 0
         self.Tail =0
 
-    def NumberOfTimeFlipCoin (self):
+    def NumberOfTimeFlipCoin (self):                        # Coin flip Method
         self.FlipCoinNumber = random.randint(5,10)
         print(self.FlipCoinNumber,' Time coin flipped : ')
         for x in range(self.FlipCoinNumber):
@@ -26,7 +26,7 @@ class FlipCoin :
                 self.Tail = self.Tail + 1
         return self.FlipCoinNumber, self.Head, self.Tail ;
 
-    def CalculatePercentage (self):
+    def CalculatePercentage (self):                         # Calculateing Peecentage of Head and Tail
         self.FlipCoinNumber, self.Head, self.Tail = self.NumberOfTimeFlipCoin()
         self.Head = self.Head / self.FlipCoinNumber * 100
         self.Tail = self.Tail / self.FlipCoinNumber * 100
@@ -35,9 +35,9 @@ class FlipCoin :
 
     randomNumber = random.randint(1,9)
 
-if __name__ =='__main__' :
-    try :
-        object = FlipCoin()
-        object.CalculatePercentage()
+if __name__ =='__main__' :                                  # Main Method
+    try :                                                   # Exception Handling
+        object = FlipCoin()                                 # Creating object
+        object.CalculatePercentage()                        # Calling CalculatePercentage Method
     except :
         print('Exception Occure')
