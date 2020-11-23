@@ -17,7 +17,7 @@ class HarmonicNumber :
         print(self.sum)
 
 if __name__ == '__main__' :                                                                     # Main Method
-    try :   # Exception Handling
+    try :                                                                                       # Exception Handling
         UserNumber = int(input('Enter the number upto you want to print harmonic value :'))     # accepting Number from User
         object = HarmonicNumber(UserNumber)                                                     # creating object and pass Parameter
         object.HarmonicValue()                                                                  # Calling Method HarmonicValue
