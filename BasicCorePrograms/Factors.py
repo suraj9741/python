@@ -1,9 +1,9 @@
 """
    * author - ${Suraj Jadhav}
    * date - ${23-Nov-20}
-   * time - ${10:50 AM}
+   * time - ${10:50 PM}
    * package - ${PACKAGE_NAME}
-   * Title - Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N.
+   * Title - Computes the prime factorization of N using brute force..
 """
 import math
 
@@ -22,8 +22,8 @@ class Factors :
         if self.UserNumber >2 :                                         # some time prime factor remaining at last so tat will print
             print(int(self.UserNumber))
 
-if __name__ == '__main__' : # main
-    try : # Exception Handling
+if __name__ == '__main__' :                                             # main
+    try :                                                               # Exception Handling
         UserNumber = int(input('Enter a number : '))                    # accepting Number from User
         object = Factors(UserNumber)                                    # creating object and pass Parameter
         object.CalculateFactor()                                        # Calling Method CalculateFactor
