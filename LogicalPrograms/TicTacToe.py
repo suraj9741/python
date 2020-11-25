@@ -11,13 +11,15 @@
 import random
 
 class tictactoe :
-    # construtor
+
+    # constructor for game board
     def __init__(self):
         self.board = {'7':' ','8':' ','9':' ',
                       '4':' ','5':' ','6':' ',
                       '1':' ','2':' ','3':' '}
         self.playerTurn = ''
 
+    # print game board
     def printBoard(self):
         print(self.board['7']+ '|' +self.board['8'] + '|' +self.board['9'])
         print('-+-+-')
@@ -25,7 +27,7 @@ class tictactoe :
         print('-+-+-')
         print(self.board['1'] + '|' +self.board['2'] + '|' +self.board['3'])
 
-
+    # Toss function for who's turn is first
     def toss(self):
         self.playerTurn = random.randint(0,1)
         if self.playerTurn:
@@ -36,6 +38,7 @@ class tictactoe :
             print('you win toss\nYou have O\nComputer have X')
         return self.playerTurn
 
+    # logic tic-tac-toe program
     def gameStart(self):
         self.playerTurn = self.toss()
         self.playerTurnCount = 0
@@ -43,6 +46,7 @@ class tictactoe :
         while self.playerTurnCount < 9:
             self.printBoard()
 
+            # who one is play computer or you
             if self.playerTurn == 'X' :
                 print('its computer ' + self.playerTurn + ' Turn\nMove to which place?')
                 computerMove = random.randint(1,9)
@@ -51,6 +55,7 @@ class tictactoe :
                 print('its your ' + self.playerTurn + ' Turn\nMove to which place?')
                 move = input()
 
+            # accepting value from computer or player and insert
             if self.board[move] == ' ':
                 self.board[move] = self.playerTurn
                 self.playerTurnCount += 1
@@ -58,59 +63,72 @@ class tictactoe :
                 print("That place is already filled.\nMove to which place?")
                 continue
 
+            # check wining condition
             if self.playerTurnCount >= 5:
-                if self.board['7'] == self.board['8'] == self.board['9'] != ' ':  # across the top
+                # across the top
+                if self.board['7'] == self.board['8'] == self.board['9'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['4'] == self.board['5'] == self.board['6'] != ' ':  # across the middle
+                # across the middle
+                elif self.board['4'] == self.board['5'] == self.board['6'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['1'] == self.board['2'] == self.board['3'] != ' ':  # across the bottom
+                # across the bottom
+                elif self.board['1'] == self.board['2'] == self.board['3'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['1'] == self.board['4'] == self.board['7'] != ' ':  # down the left side
+                # down the left side
+                elif self.board['1'] == self.board['4'] == self.board['7'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['2'] == self.board['5'] == self.board['8'] != ' ':  # down the middle
+                # down the middle
+                elif self.board['2'] == self.board['5'] == self.board['8'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['3'] == self.board['6'] == self.board['9'] != ' ':  # down the right side
+                # down the right side
+                elif self.board['3'] == self.board['6'] == self.board['9'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['7'] == self.board['5'] == self.board['3'] != ' ':  # diagonal
+                # diagonal
+                elif self.board['7'] == self.board['5'] == self.board['3'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
-                elif self.board['1'] == self.board['5'] == self.board['9'] != ' ':  # diagonal
+                # diagonal
+                elif self.board['1'] == self.board['5'] == self.board['9'] != ' ':
                     self.printBoard()
                     print("\nGame Over.\n")
                     print("**** " + self.playerTurn + " won. ****")
                     break
+
+            # check game tie condition
             if self.playerTurnCount == 9:
                 print("\nGame Over.\n")
                 print("It's a Tie!!")
                 self.printBoard()
 
+            # change player turn
             if self.playerTurn == 'X':
                 self.playerTurn = 'O'
             else:
                 self.playerTurn = 'X'
 
-
+# main method
 if __name__ == '__main__' :
+    # Exception Handling
     try :
         tictactoeObject = tictactoe()
         tictactoeObject.gameStart()
