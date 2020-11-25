@@ -25,7 +25,7 @@ class gambler:
                 break
             else:
                 print('You enter value less than 0 or less than stack')
-        reself.playerTurn stack, goal
+        return stack, goal
 
     # Check You win or loss
     def reachtheGoalorNot (self):
@@ -48,7 +48,7 @@ class gambler:
                 win = 0
             else:
                 win = 1
-        reself.playerTurn win, winCount, lossCount, numberOfTime
+        return win, winCount, lossCount, numberOfTime
 
     # calculate persentage of win and loss
     def calculatePersentage(self):
@@ -60,9 +60,9 @@ class gambler:
         winPersentage = winCount / numberOfTime * 100
         lossPersentage = lossCount / numberOfTime * 100
         if win == 0:
-            reself.playerTurn 'You Reached Goal',winPersentage, lossPersentage
+            return 'You Reached Goal',winPersentage, lossPersentage
         else:
-            reself.playerTurn 'You Broke', winPersentage, lossPersentage
+            return'You Broke', winPersentage, lossPersentage
 
 # main method
 if __name__ == '__main__':

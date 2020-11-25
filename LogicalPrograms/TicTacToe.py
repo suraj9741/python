@@ -11,6 +11,7 @@
 import random
 
 class tictactoe :
+    # construtor
     def __init__(self):
         self.board = {'7':' ','8':' ','9':' ',
                       '4':' ','5':' ','6':' ',

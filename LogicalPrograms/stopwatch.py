@@ -17,7 +17,7 @@ class stopwatch :
         sec = sec % 60
         hours = mins // 60
         mins = mins % 60
-        reself.playerTurn int(hours), int(mins), float(sec)
+        return int(hours), int(mins), float(sec)
 
     # Run the stopwatch hear
     def stopwatchRun(self):
